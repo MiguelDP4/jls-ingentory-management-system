@@ -5,9 +5,9 @@
     <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Username" %>
     <%= f.email_field :email, autocomplete: "email", placeholder: "E-Mail" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <%= f.password_field :password, autocomplete: "new-password", 
+      placeholder: "Password#{" (#{@minimum_password_length} characters minimum)" if @minimum_password_length}" %>
     <% end %>
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation" %>
     <%= f.submit "Sign up" %>
 <% end %>
