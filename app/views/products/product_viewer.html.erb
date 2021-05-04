@@ -1,0 +1,11 @@
+<div class="product-viewer">
+  <h2>All Products</h2>
+  <% @core_products.each do |p| %>
+    <a href=<%= product_path(p.core_number) %>>
+      <div class="product-miniature">
+        <h3><%= p.internal_title %></h3>
+        <% if p.core_number %><p><b>Core Number: </b><%= p.core_number %></p><% end %>        
+      </div>
+    </a>
+  <% end %>
+<div>

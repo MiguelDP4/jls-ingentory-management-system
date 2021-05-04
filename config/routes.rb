@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root 'products#product_viewer'
 
   get 'products', to: 'products#product_viewer'
-  get 'product/:core_number', to: 'products#product_detail'
+  get 'product/:core_number', to: 'products#product_detail', as: 'product'
 end

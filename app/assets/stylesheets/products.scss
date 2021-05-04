@@ -1,0 +1,23 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.product-viewer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  a {
+    text-decoration: none;
+    color: black;
+    .product-miniature {
+      width: 100%;
+      border-radius: 4px;
+      border: solid 1px #cccccc;
+      margin-bottom: 8px;
+      padding-left: 1em;
+      transition: 300ms;
+      &:hover {
+        background-color: #dddddd;
+      }
+    }
+  }
+}
