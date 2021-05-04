@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
-table = CSV.read(File.expand_path('../core-products.csv', __FILE__))
 
-table.drop(1).each do |row|
+core_products_table = CSV.read(File.expand_path('../core-products.csv', __FILE__))
+core_products_table.drop(1).each do |row|
   CoreProduct.create!(
     core_number: row[0],
     internal_title: row[1],
@@ -38,4 +38,12 @@ table.drop(1).each do |row|
     ignore_until: row[25],
     notes: row[26]
   )
+end
+
+locations_table = CSV.read(File.expand_path('../locations.csv', __FILE__))
+locations_table.drop(1).each do |row|
+  cp = CoreProduct.find_by(core_number: row[1])
+  if cp
+    cp.locations.build(warehouse: row[0], location: row[2], quantity: row[3]).save
+  end
 end
