@@ -1,0 +1,39 @@
+<div class="product-detail">
+  <h2><%= @core_product.internal_title %></h2>
+  <div class="product-detail-info">
+    <% if @core_product.core_number %><p><b>Core Number: </b><%= @core_product.core_number %></p><% end %>
+    <% if @core_product.vendor %><p><b>Vendor: </b><%= @core_product.vendor %></p><% end %>
+    <% if @core_product.vendor_title %><p><b>Vendor's title: </b><%= @core_product.vendor_title %></p><% end %>
+    <% if @core_product.vendor_sku %><p><b>Vendor's SKU: </b><%= @core_product.vendor_sku %></p><% end %>
+    <% if @core_product.restockable %><p><b>Restockable: </b><%= @core_product.restockable %></p><% end %>
+    <% if @core_product.vendor_order_unit %><p><b>Vendor Order Unit: </b><%= @core_product.vendor_order_unit %></p><% end %>
+    <% if @core_product.vendor_case_pack %><p><b>Vendor Case Pack: </b><%= @core_product.vendor_case_pack %></p><% end %>
+    <% if @core_product.moq %><p><b>MOQ (Pieces): </b><%= @core_product.moq %></p><% end %>
+    <% if @core_product.buffer_days %><p><b>Buffer Days: </b><%= @core_product.buffer_days %></p><% end %>
+    <% if @core_product.minimum_level %><p><b>Minimum Level: </b><%= @core_product.minimum_level %></p><% end %>
+    <% if @core_product.product_url %><p><b>Product URL: </b><%= @core_product.product_url %></p><% end %>
+    <% if @core_product.note_for_next_order %><p><b>Note for Next Order: </b><%= @core_product.note_for_next_order %></p><% end %>
+    <% if @core_product.case_pack %><p><b>Case Pack (Pieces): </b><%= @core_product.case_pack %></p><% end %>
+    <% if @core_product.pieces_per_internal_box %><p><b>Pieces Per Internal Box: </b><%= @core_product.pieces_per_internal_box %></p><% end %>
+    <% if @core_product.boxes_per_case %><p><b>Boxes Per Case: </b><%= @core_product.boxes_per_case %></p><% end %>
+    <% if @core_product.tags_and_info %><p><b>Tags & Info: </b><%= @core_product.tags_and_info %></p><% end %>
+    <% if @core_product.tag_one %><p><b>Tag 1: </b><%= @core_product.tag_one %></p><% end %>
+    <% if @core_product.tag_two %><p><b>Tag 2: </b><%= @core_product.tag_two %></p><% end %>
+    <% if @core_product.tag_three %><p><b>Tag 3: </b><%= @core_product.tag_three %></p><% end %>
+    <% if @core_product.tag_four %><p><b>Tag 4: </b><%= @core_product.tag_four %></p><% end %>
+    <% if @core_product.hazmat %><p><b>Hazmat: </b><%= @core_product.hazmat %></p><% end %>
+    <% if @core_product.active %><p><b>Active: </b><%= @core_product.active %></p><% end %>
+    <% if @core_product.ignore_until %><p><b>Ignore Until: </b><%= @core_product.ignore_until %></p><% end %>
+    <% if @core_product.notes %><p><b>Notes: </b><%= @core_product.notes %></p><% end %>
+  </div>
+  <div class="product-detail-locations">
+    <% if @core_product.locations.count > 0 %>
+      <h2>Locations</h2>
+      <% @core_product.locations.each do |location| %>
+        <p><b>Location: </b><%= location.location %></p>
+        <p><b>Quantity: </b><%= location.quantity %></p>
+      <% end %>
+      <p><b>Total in Warehouse: </b> <%= @core_product.locations.inject(0) { |total, location| total + location.quantity} %></p>
+    <%end%>
+  </div>
+</div>
