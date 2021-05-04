@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_04_151254) do
+ActiveRecord::Schema.define(version: 2021_05_04_173953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "core_products", force: :cascade do |t|
+    t.string "core_number"
+    t.string "internal_title"
+    t.string "vendor"
+    t.string "vendor_title"
+    t.string "vendor_sku"
+    t.string "backup_vendor"
+    t.string "backup_vendor_sku"
+    t.string "restockable"
+    t.string "vendor_order_unit"
+    t.integer "vendor_case_pack"
+    t.integer "moq"
+    t.integer "buffer_days"
+    t.integer "minimum_level"
+    t.string "product_url"
+    t.string "note_for_next_order"
+    t.integer "case_pack"
+    t.integer "pieces_per_internal_box"
+    t.integer "boxes_per_case"
+    t.string "tags_and_info"
+    t.string "tag_one"
+    t.string "tag_two"
+    t.string "tag_three"
+    t.string "tag_four"
+    t.string "hazmat"
+    t.string "active"
+    t.datetime "ignore_until"
+    t.string "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

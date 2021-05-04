@@ -1,0 +1,2 @@
+class CoreProduct < ApplicationRecord
+end
