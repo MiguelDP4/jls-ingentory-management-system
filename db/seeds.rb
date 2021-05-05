@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
-
+CoreProduct.delete_all
+Location.delete_all
 core_products_table = CSV.read(File.expand_path('../core-products.csv', __FILE__))
 core_products_table.drop(1).each do |row|
   CoreProduct.create!(
