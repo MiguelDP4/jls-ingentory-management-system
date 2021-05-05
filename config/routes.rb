@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get 'products', to: 'products#product_viewer'
   get 'product/:core_number', to: 'products#product_detail', as: 'product'
+
+  patch 'location/edit/:id', to: 'locations#update', as: 'location'
 end
