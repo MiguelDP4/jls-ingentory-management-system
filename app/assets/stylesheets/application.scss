@@ -30,3 +30,25 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.notice {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  padding: 1em;
+  background-color: #6e81aa;
+  border: solid 1px #395EAC;
+  border-radius: 6px;
+}
+
+.alert {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  padding: 1em;
+  background-color: #aa6e6e;
+  border: solid 1px #ac3939;
+  border-radius: 6px;
+}

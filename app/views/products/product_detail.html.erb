@@ -30,8 +30,16 @@
     <% if @core_product.locations.count > 0 %>
       <h2>Locations</h2>
       <% @core_product.locations.each do |location| %>
+      <div class="location">
         <p><b>Location: </b><%= location.location %></p>
         <p><b>Quantity: </b><%= location.quantity %></p>
+        <% if user_signed_in? %>
+          <%= form_with(model: location, method: :patch) do |f| %>
+            <%= f.number_field :quantity, step: 1, value: 0 %>
+            <%= f.submit "Update Quantity" %>
+          <% end %>
+        <% end %>
+      </div>
       <% end %>
       <p><b>Total in Warehouse: </b> <%= @core_product.locations.inject(0) { |total, location| total + location.quantity} %></p>
     <%end%>

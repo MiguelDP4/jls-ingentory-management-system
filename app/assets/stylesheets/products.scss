@@ -21,3 +21,23 @@
     }
   }
 }
+
+.product-detail {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: solid 1px #cccccc;
+  border-radius: 6px;
+  margin-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  .product-detail-info, .product-detail-locations, .location {
+    border-bottom: solid 1px #cccccc;
+  }
+  .product-detail-locations {
+    padding-left: 1em;
+    .location {
+      padding-bottom: 1em;
+    }
+  }
+}
