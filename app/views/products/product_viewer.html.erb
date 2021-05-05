@@ -1,5 +1,9 @@
 <div class="product-viewer">
   <h2>All Products</h2>
+  <%= form_tag(products_path, method: :get, class: "search-form") do %>
+    <%= text_field_tag(:internal_title, params[:internal_title], class: "search-text-input") %>
+    <%= submit_tag "Search Products" %>
+  <% end %>
   <% @core_products.each do |p| %>
     <a href=<%= product_path(p.core_number) %>>
       <div class="product-miniature">
